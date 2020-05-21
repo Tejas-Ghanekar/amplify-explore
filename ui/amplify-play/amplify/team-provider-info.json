@@ -10,6 +10,11 @@
             "StackName": "amplify-amplifyplay-dev-141030",
             "StackId": "arn:aws:cloudformation:us-east-1:201751494828:stack/amplify-amplifyplay-dev-141030/5bc83450-9b8e-11ea-ba4a-0e58854680da",
             "AmplifyAppId": "d2ota2hctahdhl"
+        },
+        "categories": {
+            "auth": {
+                "cognito431ba830": {}
+            }
         }
     }
 }

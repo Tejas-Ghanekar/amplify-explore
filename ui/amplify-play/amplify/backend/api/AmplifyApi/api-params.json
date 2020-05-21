@@ -1,0 +1,44 @@
+{
+    "paths": [
+        {
+            "name": "/level1",
+            "lambdaFunction": "AmplifyLambda",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/GET"
+                ]
+            }
+        }
+    ],
+    "resourceName": "AmplifyApi",
+    "apiName": "AmplifyApi",
+    "functionArns": [
+        {
+            "lambdaFunction": "AmplifyLambda"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 1,
+        "authRoleName": "amplify-amplifyplay-dev-141030-authRole",
+        "unAuthRoleName": "amplify-amplifyplay-dev-141030-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "AmplifyLambda",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
