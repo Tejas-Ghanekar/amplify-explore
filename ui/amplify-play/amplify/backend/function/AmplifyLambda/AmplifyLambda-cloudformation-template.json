@@ -68,13 +68,25 @@
 				"Timeout": "25",
 				"Code": {
 					"S3Bucket": "amplify-amplifyplay-dev-141030-deployment",
-					"S3Key": "amplify-builds/AmplifyLambda-73476a6874496b6a7278-build.zip"
+					"S3Key": "amplify-builds/AmplifyLambda-41426b4470736f4c3069-build.zip"
+				},
+				"VpcConfig": {
+					"SecurityGroupIds": [
+						"sg-0146ea292dab4647f"
+					],
+					"SubnetIds": [
+						"subnet-045168d8be6f8058c",
+						"subnet-014dfa762e313d41b"
+					]
 				}
 			}
 		},
 		"LambdaExecutionRole": {
 			"Type": "AWS::IAM::Role",
 			"Properties": {
+				"ManagedPolicyArns": [
+					"arn:aws:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole"
+				],
 				"RoleName": {
 					"Fn::If": [
 						"ShouldNotCreateEnvResources",
@@ -131,7 +143,12 @@
 							"Action": [
 								"logs:CreateLogGroup",
 								"logs:CreateLogStream",
-								"logs:PutLogEvents"
+								"logs:PutLogEvents",
+								"ec2:DescribeNetworkInterfaces",
+								"ec2:CreateNetworkInterface",
+								"ec2:DeleteNetworkInterface",
+								"ec2:DescribeInstances",
+								"ec2:AttachNetworkInterface"
 							],
 							"Resource": {
 								"Fn::Sub": [
