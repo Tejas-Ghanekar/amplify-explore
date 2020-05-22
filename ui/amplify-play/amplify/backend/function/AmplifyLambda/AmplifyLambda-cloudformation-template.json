@@ -68,7 +68,7 @@
 				"Timeout": "25",
 				"Code": {
 					"S3Bucket": "amplify-amplifyplay-dev-141030-deployment",
-					"S3Key": "amplify-builds/AmplifyLambda-41426b4470736f4c3069-build.zip"
+					"S3Key": "amplify-builds/AmplifyLambda-736b684543642b637564-build.zip"
 				},
 				"VpcConfig": {
 					"SecurityGroupIds": [
